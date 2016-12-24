@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <title>TODO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/style.css"/>
+
+</head>
+<body ng-controller="todoController" ng-app="todoApp" class="todo-controller">
+    <div class="container-fluid">
+        <h3 class="text-center">My ToDo List</h3>
+        <div class="list-group">
+            <div ng-repeat="todo in todoList" class="list-group-item">
+                <div class="col-sm-10">{{todo.todoItem}}</div>
+                <div class="col-sm-2">
+                    <button ng-show="todo.status==1" class="glyphicon btn btn-default btn-sm" ng-click="changeStatus(todo)" title="done">&#xe013;</button>
+                    <button ng-show="todo.status==0" class="glyphicon btn btn-default btn-sm" ng-click="changeStatus(todo)" title="undone">&#xe014;</button>
+                    <button class="glyphicon btn btn-default btn-sm" ng-click="deleteTodo(todo)" title="deleteS">&#xe020;</button>
+                </div>
+            </div>
+        </div>
+        <div id="addTodo">
+            <input type="text" class="form-control" name="term" placeholder="new todo..." ng-model="newTodo" required />
+            <button class="btn btn-primary" ng-click="addTodo()" ng-disabled="!newTodo">Add Todo</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/js/todo.js"></script>
+
+</body>
+</html>
