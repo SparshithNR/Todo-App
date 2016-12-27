@@ -1,4 +1,4 @@
-# Todo-App
+# Todo-App using AngularJS
 A sample todo web application
 This sample application is created using the AnuglarJS.
 
